@@ -1,6 +1,6 @@
 {
   "contractVersion": 1,
-  "generatedAt": "2026-10-28T03:29:20.131Z",
+  "generatedAt": "2026-10-28T04:09:45.054Z",
   "tcgcsvLastUpdated": "2026-10-27T20:05:13+0000",
   "status": "ok",
   "summary": {
@@ -17,8 +17,8 @@
       "date": "2026-10-27",
       "source": "Bank of Canada Valet FXUSDCAD"
     },
-    "requests": 1,
-    "durationMs": 5890
+    "requests": 100,
+    "durationMs": 17280
   },
   "setsMissingPullData": [
     {
