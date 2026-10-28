@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Expected value of opening every English Pokémon TCG sealed product vs. what it costs, updated nightly." />
+    <title>Pokémon Sealed ROI</title>
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <nav class="site-nav"><a href="index.html" aria-current="page">Rankings</a><a href="charts.html">Charts</a></nav>
+    <header>
+      <h1>Pokémon Sealed ROI</h1>
+      <p class="muted">
+        Expected value of opening each English sealed product vs. what it costs. ROI 100% = break-even.
+        EV uses ungraded NM TCGplayer market prices and measured pull rates; see <a href="data/build-report.json">build report</a>.
+      </p>
+    </header>
+
+    <section class="controls" aria-label="Filters">
+      <fieldset id="types"><legend>Product</legend></fieldset>
+      <label>Era <select id="era"><option value="">All</option></select></label>
+      <label>Currency
+        <select id="currency"><option>USD</option><option>CAD</option></select>
+      </label>
+      <label>EV basis
+        <select id="basis"><option value="gross">Gross (market)</option><option value="net">Net of fees</option></select>
+      </label>
+      <label><input type="checkbox" id="hideNoData" /> Hide sets without pull data</label>
+    </section>
+
+    <p id="meta" class="muted"></p>
+    <div id="table" class="scroll"></div>
+    <script type="module" src="app/index.js"></script>
+  </body>
+</html>

@@ -1,0 +1,17 @@
+{
+  "name": "pokemon-roi-spa",
+  "version": "1.0.0",
+  "description": "Ranks English Pokémon TCG sealed products by expected value of opening vs. cost to buy.",
+  "type": "module",
+  "private": true,
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "node scripts/build-data.mjs",
+    "build:force": "node scripts/build-data.mjs --force",
+    "test": "node --test test/*.test.js",
+    "serve": "node scripts/serve.mjs"
+  }
+}

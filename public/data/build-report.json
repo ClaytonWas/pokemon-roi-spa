@@ -1,0 +1,342 @@
+{
+  "contractVersion": 1,
+  "generatedAt": "2026-10-28T03:29:20.131Z",
+  "tcgcsvLastUpdated": "2026-10-27T20:05:13+0000",
+  "status": "ok",
+  "summary": {
+    "setsProcessed": 41,
+    "setsWithMeasuredPullData": 21,
+    "setsWithoutPullData": 20,
+    "rows": 171,
+    "cards": 8709,
+    "pricedCardShare": 1,
+    "cardsUsingPriceFallback": 0,
+    "excludedNonPackCards": 1,
+    "fx": {
+      "usdCad": 1.4038,
+      "date": "2026-10-27",
+      "source": "Bank of Canada Valet FXUSDCAD"
+    },
+    "requests": 1,
+    "durationMs": 5890
+  },
+  "setsMissingPullData": [
+    {
+      "groupId": 24831,
+      "setName": "ME06: Delta Reign"
+    },
+    {
+      "groupId": 24722,
+      "setName": "ME: 30th Celebration"
+    },
+    {
+      "groupId": 24325,
+      "setName": "SV: Black Bolt"
+    },
+    {
+      "groupId": 24326,
+      "setName": "SV: White Flare"
+    },
+    {
+      "groupId": 23821,
+      "setName": "SV: Prismatic Evolutions"
+    },
+    {
+      "groupId": 23529,
+      "setName": "SV: Shrouded Fable"
+    },
+    {
+      "groupId": 23237,
+      "setName": "SV: Scarlet & Violet 151"
+    },
+    {
+      "groupId": 3064,
+      "setName": "Pokemon GO"
+    },
+    {
+      "groupId": 3040,
+      "setName": "SWSH10: Astral Radiance"
+    },
+    {
+      "groupId": 2948,
+      "setName": "SWSH09: Brilliant Stars"
+    },
+    {
+      "groupId": 2906,
+      "setName": "SWSH08: Fusion Strike"
+    },
+    {
+      "groupId": 2867,
+      "setName": "Celebrations"
+    },
+    {
+      "groupId": 2807,
+      "setName": "SWSH06: Chilling Reign"
+    },
+    {
+      "groupId": 2765,
+      "setName": "SWSH05: Battle Styles"
+    },
+    {
+      "groupId": 2754,
+      "setName": "Shining Fates"
+    },
+    {
+      "groupId": 2701,
+      "setName": "SWSH04: Vivid Voltage"
+    },
+    {
+      "groupId": 2685,
+      "setName": "Champion's Path"
+    },
+    {
+      "groupId": 2675,
+      "setName": "SWSH03: Darkness Ablaze"
+    },
+    {
+      "groupId": 2626,
+      "setName": "SWSH02: Rebel Clash"
+    },
+    {
+      "groupId": 2585,
+      "setName": "SWSH01: Sword & Shield Base Set"
+    }
+  ],
+  "unmappedRarities": [],
+  "unclassifiedProducts": [],
+  "unknownOddsTiers": [],
+  "tierCountMismatches": [],
+  "packCountMismatches": [
+    {
+      "groupId": 2701,
+      "setName": "SWSH04: Vivid Voltage",
+      "productId": 222986,
+      "name": "Sword & Shield Elite Trainer Box Plus [Zamazenta]",
+      "configured": 8,
+      "stated": 12,
+      "canonical": false
+    },
+    {
+      "groupId": 2701,
+      "setName": "SWSH04: Vivid Voltage",
+      "productId": 222987,
+      "name": "Sword & Shield Elite Trainer Box Plus [Zacian]",
+      "configured": 8,
+      "stated": 12,
+      "canonical": false
+    }
+  ],
+  "modelIssues": [
+    {
+      "groupId": 24655,
+      "setName": "ME04: Chaos Rising",
+      "issue": "Chaos Rising Pokemon Center Elite Trainer Box: EV withheld, the TCGplayer listing does not state how many packs it contains."
+    },
+    {
+      "groupId": 23228,
+      "setName": "SV03: Obsidian Flames",
+      "issue": "Obsidian Flames Pokemon Center Elite Trainer Box (Exclusive): EV withheld, the TCGplayer listing does not state how many packs it contains."
+    }
+  ],
+  "excludedGroups": [
+    {
+      "groupId": 24584,
+      "name": "First Partner Collection 2026",
+      "reason": "deny list"
+    },
+    {
+      "groupId": 24529,
+      "name": "Player Placement Trainer Promos",
+      "reason": "deny list"
+    },
+    {
+      "groupId": 24451,
+      "name": "ME: Mega Evolution Promo",
+      "reason": "deny list"
+    },
+    {
+      "groupId": 24461,
+      "name": "MEE: Mega Evolution Energies",
+      "reason": "deny list"
+    },
+    {
+      "groupId": 24163,
+      "name": "McDonald's Promos 2024",
+      "reason": "deny list"
+    },
+    {
+      "groupId": 23561,
+      "name": "Trick or Trade BOOster Bundle 2024",
+      "reason": "deny list"
+    },
+    {
+      "groupId": 23520,
+      "name": "Battle Academy 2024",
+      "reason": "deny list"
+    },
+    {
+      "groupId": 23323,
+      "name": "Trading Card Game Classic",
+      "reason": "deny list"
+    },
+    {
+      "groupId": 23330,
+      "name": "My First Battle",
+      "reason": "deny list"
+    },
+    {
+      "groupId": 23306,
+      "name": "McDonald's Promos 2023",
+      "reason": "deny list"
+    },
+    {
+      "groupId": 23266,
+      "name": "Trick or Trade BOOster Bundle 2023",
+      "reason": "deny list"
+    },
+    {
+      "groupId": 24864,
+      "name": "Southeast Asia Exclusives",
+      "reason": "deny list"
+    },
+    {
+      "groupId": 22872,
+      "name": "SV: Scarlet & Violet Promo Cards",
+      "reason": "deny list"
+    },
+    {
+      "groupId": 24382,
+      "name": "SVE: Scarlet & Violet Energies",
+      "reason": "deny list"
+    },
+    {
+      "groupId": 22880,
+      "name": "Prize Pack Series Cards",
+      "reason": "deny list"
+    },
+    {
+      "groupId": 3179,
+      "name": "Trick or Trade BOOster Bundle",
+      "reason": "deny list"
+    },
+    {
+      "groupId": 3150,
+      "name": "McDonald's Promos 2022",
+      "reason": "deny list"
+    },
+    {
+      "groupId": 3051,
+      "name": "Battle Academy 2022",
+      "reason": "deny list"
+    },
+    {
+      "groupId": 2782,
+      "name": "McDonald's 25th Anniversary Promos",
+      "reason": "deny list"
+    },
+    {
+      "groupId": 2686,
+      "name": "Battle Academy",
+      "reason": "deny list"
+    },
+    {
+      "groupId": 1543,
+      "name": "EX Trainer Kit 1: Latias & Latios",
+      "reason": "deny list"
+    },
+    {
+      "groupId": 1542,
+      "name": "EX Trainer Kit 2: Plusle & Minun",
+      "reason": "deny list"
+    },
+    {
+      "groupId": 1423,
+      "name": "Nintendo Promos",
+      "reason": "deny list"
+    },
+    {
+      "groupId": 1422,
+      "name": "POP Series 1",
+      "reason": "deny list"
+    },
+    {
+      "groupId": 1447,
+      "name": "POP Series 2",
+      "reason": "deny list"
+    },
+    {
+      "groupId": 1442,
+      "name": "POP Series 3",
+      "reason": "deny list"
+    },
+    {
+      "groupId": 1452,
+      "name": "POP Series 4",
+      "reason": "deny list"
+    },
+    {
+      "groupId": 1439,
+      "name": "POP Series 5",
+      "reason": "deny list"
+    },
+    {
+      "groupId": 1432,
+      "name": "POP Series 6",
+      "reason": "deny list"
+    },
+    {
+      "groupId": 1414,
+      "name": "POP Series 7",
+      "reason": "deny list"
+    },
+    {
+      "groupId": 1450,
+      "name": "POP Series 8",
+      "reason": "deny list"
+    },
+    {
+      "groupId": 1446,
+      "name": "POP Series 9",
+      "reason": "deny list"
+    },
+    {
+      "groupId": 1938,
+      "name": "Alternate Art Promos",
+      "reason": "deny list"
+    },
+    {
+      "groupId": 2289,
+      "name": "Blister Exclusives",
+      "reason": "deny list"
+    },
+    {
+      "groupId": 2175,
+      "name": "Burger King Promos",
+      "reason": "deny list"
+    },
+    {
+      "groupId": 2776,
+      "name": "First Partner Pack",
+      "reason": "deny list"
+    },
+    {
+      "groupId": 2374,
+      "name": "Miscellaneous Cards & Products",
+      "reason": "deny list"
+    },
+    {
+      "groupId": 2205,
+      "name": "Pikachu World Collection Promos",
+      "reason": "deny list"
+    },
+    {
+      "groupId": 2332,
+      "name": "Professor Program Promos",
+      "reason": "deny list"
+    }
+  ],
+  "unrecognizedGroups": [],
+  "evSwings": [],
+  "warnings": [],
+  "errors": []
+}

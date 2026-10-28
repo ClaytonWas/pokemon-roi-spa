@@ -1,0 +1,65 @@
+{
+  "_doc": "Single source of every assumption number. The build copies `pricing`, `graded`, `simulation` and `chase` into public/data/index.json -> meta.assumptions so the UI starts from the same defaults (users may override them in their browser).",
+
+  "pricing": {
+    "_doc": "Raw (ungraded NM) valuation. Cards priced below bulkThreshold are valued at bulkRatePerCard instead of market. Net = price*(1-sellFeePct) - perCardShipping, applied only to cards at/above the threshold.",
+    "bulkThreshold": 1.0,
+    "bulkRatePerCard": 0.01,
+    "bulkRateByGroup": {},
+    "_bulkRateByGroupNote": "Optional per-group bulk rates. Keys are tier names (e.g. 'Double Rare') or filler pool ids ('common', 'uncommon', 'rare', 'reverse'). Unlisted groups use bulkRatePerCard.",
+    "sellFeePct": 0.1325,
+    "_sellFeeSource": "TCGplayer Marketplace Level 1-4 seller: 10.75% commission (raised from 10.25% on 2026-02-10) + 2.5% payment processing. The $0.30/order processing fee is folded into perCardShipping. https://help.tcgplayer.com/hc/en-us/articles/23315007565079",
+    "perCardShipping": 0.75,
+    "_perCardShippingNote": "Seller's cost to ship one single (stamp + envelope + toploader + $0.30 order fee). Ignores shipping charged to the buyer.",
+    "netFloorAtBulkRate": false,
+    "_netFloorNote": "If true, a card just above the threshold never nets less than the bulk rate (a rational seller would bulk it instead). Off by default to match the spec's literal formula.",
+    "priceFallback": "none",
+    "_priceFallbackNote": "Market price only. When a card's TCGplayer marketPrice is null it is treated as unpriced; a set with any unpriced hit-tier card has its EV withheld (unpriced filler cards count at the bulk rate). ('low'/'mid' would substitute TCGplayer's lowest/median listing, which is not a market price.)"
+  },
+
+  "graded": {
+    "_doc": "Graded EV is opt-in in the UI and never the default. gemRate and gradingCost are user sliders labeled as assumptions.",
+    "gemRate": 0.4,
+    "gradingCost": 30,
+    "topN": 15,
+    "cacheTtlDays": 7
+  },
+
+  "simulation": {
+    "sims": 20000,
+    "seed": 20240208
+  },
+
+  "chase": {
+    "_doc": "Tiers counted for the 'chase odds' metric, per pack layout. Only tiers with known odds in a set are included; the label lists the ones actually used.",
+    "sv": ["Special Illustration Rare", "Hyper Rare", "Mega Hyper Rare", "Black White Rare"],
+    "swsh": ["Alt Art V", "Alt Art VMAX", "Gold Rare", "TG Gold", "GG Gold"],
+    "30c": ["Special Illustration Rare", "Futuristic Rare", "RGB Rare"]
+  },
+
+  "fx": {
+    "_doc": "USD->CAD is fetched once per build from the Bank of Canada Valet API (official, keyless). If that fails the previous build's rate is reused, then this fallback.",
+    "url": "https://www.bankofcanada.ca/valet/observations/FXUSDCAD/json?recent=1",
+    "fallbackUsdCad": 1.4
+  },
+
+  "tcgcsv": {
+    "base": "https://tcgcsv.com",
+    "categoryId": 3,
+    "requestDelayMs": 150,
+    "retries": 3,
+    "userAgent": "pokemon-sealed-roi/1.0 (nightly GitHub Action, ~100 requests/day)",
+    "_userAgentNote": "In GitHub Actions the build appends +https://github.com/<owner>/<repo> so tcgcsv can see who is calling."
+  },
+
+  "validation": {
+    "_doc": "Hard failures stop the publish. EV swings only warn.",
+    "minSets": 40,
+    "minPricedCardShare": 0.5,
+    "evSwingWarnPct": 0.25
+  },
+
+  "history": {
+    "maxDays": 730
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "_doc": "Which tcgcsv groups are processed, which era each belongs to, and which groups are subsets whose cards come out of a parent set's packs. Rules run in order: deny -> subset -> explicit -> eraRules. A group in the date window that matches nothing is reported under build-report.unrecognizedGroups (add it to `deny` or `explicit`).",
+
+  "minReleaseDate": "2020-02-07",
+
+  "deny": [
+    "Promo",
+    "McDonald",
+    "Trainer Kit",
+    "Battle Academy",
+    "Energies$",
+    "Prize Pack",
+    "Trick or Trade",
+    "My First Battle",
+    "Trading Card Game Classic",
+    "First Partner",
+    "Southeast Asia",
+    "Player Placement",
+    "Deck",
+    "World Championship",
+    "Blister Exclusives",
+    "Miscellaneous",
+    "Countdown",
+    "Pikachu World",
+    "Professor Program",
+    "Burger King",
+    "Alternate Art Promos",
+    "Jumbo",
+    "POP Series"
+  ],
+
+  "explicit": {
+    "_doc": "groupId -> era for special sets whose names carry no era prefix.",
+    "2685": "swsh",
+    "2754": "swsh",
+    "2867": "swsh",
+    "3064": "swsh"
+  },
+
+  "eraRules": [
+    { "era": "me", "pattern": "^ME(\\d+)?:" },
+    { "era": "sv", "pattern": "^SV(\\d+)?:" },
+    { "era": "swsh", "pattern": "^SWSH(\\d+)?:" }
+  ],
+
+  "eras": {
+    "me": { "name": "Mega Evolution", "layout": "sv" },
+    "sv": { "name": "Scarlet & Violet", "layout": "sv" },
+    "swsh": { "name": "Sword & Shield", "layout": "swsh" }
+  },
+
+  "subsetPattern": "^(.*?):?\\s+(Trainer Gallery|Galarian Gallery|Shiny Vault|Classic Collection)$",
+  "subsets": {
+    "_doc": "Explicit child groupId -> parent groupId. Children are also auto-detected with subsetPattern; explicit entries win.",
+    "3020": 2948,
+    "3068": 3040,
+    "3172": 3118,
+    "17674": 3170,
+    "17689": 17688,
+    "2781": 2754,
+    "2931": 2867,
+    "24837": 24722
+  }
+}

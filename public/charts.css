@@ -1,0 +1,78 @@
+/* Charts page only. Color roles as tokens; dark values are selected steps
+   (validated against #151515 with the dataviz palette validator), not a flip. */
+.viz-root {
+  color-scheme: light;
+  --surface-1: #ffffff;
+  --text-primary: #0b0b0b;
+  --text-secondary: #52514e;
+  --text-muted: #898781;
+  --grid: #e1e0d9;
+  --axis: #c3c2b7;
+  --deemph: #c3c2b7;
+  --range: #d9d7cf;
+  --wash: rgba(42, 120, 214, 0.08);
+  --border: rgba(11, 11, 11, 0.1);
+  --series-1: #2a78d6;
+  --series-2: #eb6834;
+  --series-3: #1baf7a;
+  --series-4: #eda100;
+  --series-5: #e87ba4;
+  --plot-background: var(--surface-1);
+}
+@media (prefers-color-scheme: dark) {
+  :root:where(:not([data-theme='light'])) .viz-root {
+    color-scheme: dark;
+    --surface-1: #151515;
+    --text-primary: #f0efec;
+    --text-secondary: #c3c2b7;
+    --text-muted: #898781;
+    --grid: #2c2c2a;
+    --axis: #383835;
+    --deemph: #4d4c48;
+    --range: #3d3c39;
+    --wash: rgba(57, 135, 229, 0.12);
+    --border: rgba(255, 255, 255, 0.1);
+    --series-1: #3987e5;
+    --series-2: #d95926;
+    --series-3: #199e70;
+    --series-4: #c98500;
+    --series-5: #d55181;
+  }
+}
+:root[data-theme='dark'] .viz-root {
+  color-scheme: dark;
+  --surface-1: #151515;
+  --text-primary: #f0efec;
+  --text-secondary: #c3c2b7;
+  --text-muted: #898781;
+  --grid: #2c2c2a;
+  --axis: #383835;
+  --deemph: #4d4c48;
+  --range: #3d3c39;
+  --wash: rgba(57, 135, 229, 0.12);
+  --border: rgba(255, 255, 255, 0.1);
+  --series-1: #3987e5;
+  --series-2: #d95926;
+  --series-3: #199e70;
+  --series-4: #c98500;
+  --series-5: #d55181;
+}
+
+.viz-root { color: var(--text-primary); }
+.viz-root .filters { position: sticky; top: 0; z-index: 2; background: var(--surface-1); padding: 8px 0; margin-bottom: 16px; border-bottom: 1px solid var(--border); display: flex; flex-wrap: wrap; gap: 0.5rem 1rem; align-items: center; }
+.viz-root figure { margin: 0 0 28px; border: 1px solid var(--border); border-radius: 8px; padding: 12px 14px; min-width: 0; }
+.viz-root figure h3 { font-size: 1rem; margin: 0; }
+.viz-root figure .subtitle { color: var(--text-secondary); margin: 2px 0 8px; font-size: 0.9rem; }
+.viz-root figure .chart { min-height: 40px; transition: opacity 120ms; }
+.viz-root figure .chart.stale { opacity: 0.5; }
+.viz-root figure .empty { color: var(--text-muted); padding: 24px 0; }
+.viz-root figure svg { display: block; overflow: visible; }
+.viz-root figure details { margin-top: 8px; }
+.viz-root figure summary { cursor: pointer; color: var(--text-secondary); font-size: 0.85rem; }
+.viz-root .legend { display: flex; flex-wrap: wrap; gap: 4px 14px; margin: 0 0 6px; font-size: 0.85rem; color: var(--text-secondary); }
+.viz-root .legend span { display: inline-flex; align-items: center; gap: 6px; }
+.viz-root .key { display: inline-block; flex: none; }
+.viz-root .key.dot { width: 9px; height: 9px; border-radius: 50%; }
+.viz-root .key.line { width: 16px; height: 2px; border-radius: 1px; }
+.viz-root .key.rect { width: 12px; height: 10px; border-radius: 2px; }
+.viz-root .key.tick { width: 2px; height: 12px; }

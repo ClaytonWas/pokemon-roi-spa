@@ -1,0 +1,57 @@
+{
+  "_doc": "Maps a TCGplayer card to a pull-rate tier. Rules are tested in order; the first match wins. Match fields (all optional, all must hold): era (list), groupIds (list), subset (subset role of the card's source group, or 'none'), rarity (exact TCGplayer Rarity string), name (regex on product name, case-insensitive), notName (regex that must NOT match), cardKind ('pokemon' | 'trainer' | 'energy', derived from extendedData 'Card Type'), cardType (regex on the raw 'Card Type'). A card no rule matches is written to build-report.unmappedRarities and left out of the EV. Tiers listed in `excludedTiers` are known non-pack cards and are dropped silently.",
+
+  "excludedTiers": ["Promo", "Not In Packs"],
+
+  "rules": [
+    { "name": "Metal Card\\)", "tier": "Not In Packs", "_note": "e.g. 'Mew ex - 205/165 (151 Metal Card)' ships in the 151 Ultra-Premium Collection, not in booster packs." },
+    { "subset": "Trainer Gallery", "rarity": "Secret Rare", "tier": "TG Gold" },
+    { "subset": "Trainer Gallery", "name": "\\(Secret\\)", "tier": "TG Gold", "_note": "Lost Origin TG29 'Pikachu VMAX (Secret)' is listed with Rarity 'Ultra Rare'." },
+    { "subset": "Trainer Gallery", "cardKind": "pokemon", "notName": "\\bV(MAX|STAR)?\\b", "tier": "TG Non-V" },
+    { "subset": "Trainer Gallery", "tier": "TG V/Trainer" },
+    { "subset": "Galarian Gallery", "rarity": "Secret Rare", "tier": "GG Gold" },
+    { "subset": "Galarian Gallery", "cardKind": "pokemon", "notName": "\\bV(MAX|STAR)?\\b", "tier": "GG Non-V" },
+    { "subset": "Galarian Gallery", "tier": "GG V/Trainer" },
+    { "subset": "Shiny Vault", "tier": "Shiny Vault" },
+    { "subset": "Classic Collection", "tier": "Classic Collection" },
+
+    { "name": "\\(Poke Ball Pattern\\)", "tier": "Poké Ball Pattern" },
+    { "name": "\\(Master Ball Pattern\\)", "tier": "Master Ball Pattern" },
+    { "name": "\\((Poke|Friend|Love|Quick|Dusk|Great|Ultra|Heal|Premier|Luxury|Timer|Net|Dive|Nest|Repeat|Level|Lure|Moon|Heavy|Fast|Safari|Sport|Dream|Beast) Ball\\)|\\(Energy Symbol Pattern\\)|\\(Team Rocket\\)", "tier": "Reverse Holo", "_note": "Ascended Heroes prints each C/U/R reverse holo in one of several foil patterns as separate products. They are priced like ordinary reverse holos (median ~$0.25), so they form the reverse-holo pool rather than a hit tier." },
+
+    { "era": ["swsh"], "groupIds": [17688], "rarity": "Ultra Rare", "name": "\\(Texture Full Art\\)", "tier": "Texture Energy" },
+    { "era": ["swsh"], "groupIds": [17688], "rarity": "Holo Rare", "cardType": "Supporter", "tier": "Signature Trainer", "_note": "Crown Zenith's six signed Holo Rare Supporters. Sky Seal Stone (a Holo Rare Tool) is not one." },
+    { "era": ["swsh"], "rarity": "Ultra Rare", "name": "\\(Alternate (Full )?Art\\)", "tier": "Alt Art V" },
+    { "era": ["swsh"], "rarity": "Ultra Rare", "name": "\\(Full Art\\)", "cardKind": "pokemon", "tier": "Full Art V" },
+    { "era": ["swsh"], "rarity": "Ultra Rare", "name": "\\(Full Art\\)", "tier": "Full Art Trainer" },
+    { "era": ["swsh"], "rarity": "Ultra Rare", "name": "\\bV(MAX|STAR)\\b", "tier": "VMAX/VSTAR" },
+    { "era": ["swsh"], "rarity": "Ultra Rare", "tier": "V" },
+    { "era": ["swsh"], "rarity": "Secret Rare", "name": "\\(Alternate Art Secret\\)", "tier": "Alt Art VMAX" },
+    { "era": ["swsh"], "rarity": "Secret Rare", "tier": "Secret Rare" },
+
+    { "rarity": "Common", "tier": "Common" },
+    { "rarity": "Uncommon", "tier": "Uncommon" },
+    { "rarity": "Rare", "tier": "Rare" },
+    { "rarity": "Holo Rare", "tier": "Holo Rare" },
+    { "rarity": "Double Rare", "tier": "Double Rare" },
+    { "rarity": "Ultra Rare", "tier": "Ultra Rare" },
+    { "rarity": "Illustration Rare", "tier": "Illustration Rare" },
+    { "rarity": "Special Illustration Rare", "tier": "Special Illustration Rare" },
+    { "rarity": "Hyper Rare", "tier": "Hyper Rare" },
+    { "rarity": "ACE SPEC Rare", "tier": "ACE SPEC Rare" },
+    { "rarity": "Mega Hyper Rare", "tier": "Mega Hyper Rare" },
+    { "rarity": "Mega Attack Rare", "tier": "Mega Attack Rare" },
+    { "rarity": "Shiny Rare", "tier": "Shiny Rare" },
+    { "rarity": "Shiny Ultra Rare", "tier": "Shiny Ultra Rare" },
+    { "rarity": "Black White Rare", "tier": "Black White Rare" },
+    { "rarity": "Pikachu Rare", "tier": "Pikachu Rare" },
+    { "rarity": "Futuristic Rare", "tier": "Futuristic Rare" },
+    { "rarity": "RGB Rare", "tier": "RGB Rare" },
+    { "rarity": "Classic Collection", "tier": "Classic Collection" },
+    { "rarity": "Radiant Rare", "tier": "Radiant Rare" },
+    { "rarity": "Amazing Rare", "tier": "Amazing Rare" },
+    { "rarity": "Shiny Holo Rare", "tier": "Shiny Vault" },
+    { "rarity": "Secret Rare", "tier": "Secret Rare" },
+    { "rarity": "Promo", "tier": "Promo" }
+  ]
+}

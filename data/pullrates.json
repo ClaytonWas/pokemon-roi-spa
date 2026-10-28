@@ -1,0 +1,921 @@
+{
+  "_doc": "Hand-maintained pull rates, measured only. A set is listed here only if a TCGplayer Authentication Center study measured every rarity tier in its packs and every tier can be valued; anything estimated, unmeasured or contradicted by its own source stays out (see `excluded`). Per set (keyed by tcgcsv groupId): `tiers` maps tier name -> per-pack odds (probability a pack contains a card of that tier) with optional ci95 and expectedCards (card count stated by the source; the build warns if the mapped count differs). Odds are uniform within a tier unless `cardOverrides` gives { \"<productId>\": <per-pack odds> }. `tierAssignments` re-tiers cards by card number; `tierAliases` merges tiers; `tierSlots` moves a tier to another pack slot. The build withholds EV for any set whose cards fall in a tier without measured odds. Never add rates without a primary source.",
+  "sets": {
+    "2848": {
+      "name": "SWSH07: Evolving Skies",
+      "layout": "swsh",
+      "source": {
+        "publisher": "TCGplayer Authentication Center",
+        "title": "Pokémon TCG: Evolving Skies Pull Rates",
+        "url": "https://www.tcgplayer.com/article/Pok%C3%A9mon-TCG-Evolving-Skies-Pull-Rates/6a743d7b-e5ee-4fd6-9d18-64a636990e8c/",
+        "date": "2024-08-27",
+        "packsOpened": 8000,
+        "packsOpenedQualifier": "more than",
+        "note": "Retrospective study published 2024."
+      },
+      "tiers": {
+        "V": {
+          "odds": 0.1056,
+          "ci95": 0.0065
+        },
+        "VMAX/VSTAR": {
+          "odds": 0.056,
+          "ci95": 0.0048
+        },
+        "Full Art": {
+          "odds": 0.0278,
+          "ci95": 0.0035,
+          "expectedCards": 27
+        },
+        "Alt Art V": {
+          "odds": 0.011,
+          "ci95": 0.0022,
+          "expectedCards": 11
+        },
+        "Alt Art VMAX": {
+          "odds": 0.003,
+          "ci95": 0.0012,
+          "expectedCards": 6
+        },
+        "Rainbow Rare": {
+          "odds": 0.0084,
+          "ci95": 0.0019,
+          "expectedCards": 16
+        },
+        "Gold Rare": {
+          "odds": 0.0091,
+          "ci95": 0.002,
+          "expectedCards": 12
+        }
+      },
+      "tierAssignments": [
+        {
+          "fromTier": "Secret Rare",
+          "numberFrom": 226,
+          "numberTo": 237,
+          "tier": "Gold Rare"
+        }
+      ],
+      "tierAliases": {
+        "Secret Rare": "Rainbow Rare",
+        "Full Art V": "Full Art",
+        "Full Art Trainer": "Full Art"
+      }
+    },
+    "3118": {
+      "name": "SWSH11: Lost Origin",
+      "layout": "swsh",
+      "source": {
+        "publisher": "TCGplayer Authentication Center",
+        "title": "Pokémon TCG: Lost Origin Pull Rates",
+        "url": "https://www.tcgplayer.com/article/Pok%C3%A9mon-TCG-Lost-Origin-Pull-Rates/ba20ac4d-9448-45ce-b919-d856d107c744/",
+        "date": "2022-09-14",
+        "packsOpened": 8000,
+        "packsOpenedQualifier": "more than"
+      },
+      "tiers": {
+        "V": {
+          "odds": 0.1163,
+          "expectedCards": 12
+        },
+        "VMAX/VSTAR": {
+          "odds": 0.0442,
+          "expectedCards": 7
+        },
+        "Full Art V": {
+          "odds": 0.0198,
+          "expectedCards": 13
+        },
+        "Full Art Trainer": {
+          "odds": 0.0142,
+          "expectedCards": 8
+        },
+        "Alt Art V": {
+          "odds": 0.005,
+          "expectedCards": 4
+        },
+        "TG Non-V": {
+          "odds": 0.0829,
+          "expectedCards": 11
+        },
+        "TG V/Trainer": {
+          "odds": 0.0317,
+          "expectedCards": 17
+        },
+        "TG Gold": {
+          "odds": 0.0086,
+          "expectedCards": 2
+        },
+        "Radiant Rare": {
+          "odds": 0.0501,
+          "expectedCards": 3
+        },
+        "Rainbow Rare": {
+          "odds": 0.0128,
+          "expectedCards": 15
+        },
+        "Gold Rare": {
+          "odds": 0.0076,
+          "expectedCards": 6
+        }
+      },
+      "tierAssignments": [
+        {
+          "fromTier": "Secret Rare",
+          "numberFrom": 212,
+          "numberTo": 217,
+          "tier": "Gold Rare"
+        }
+      ],
+      "tierAliases": {
+        "Secret Rare": "Rainbow Rare"
+      }
+    },
+    "3170": {
+      "name": "SWSH12: Silver Tempest",
+      "layout": "swsh",
+      "source": {
+        "publisher": "TCGplayer Authentication Center",
+        "title": "Pokémon TCG: Silver Tempest Pull Rates",
+        "url": "https://www.tcgplayer.com/article/Pok%C3%A9mon-TCG-Silver-Tempest-Pull-Rates/6490d591-e582-4930-8446-00e190876d30/",
+        "date": "2022-11-13",
+        "packsOpened": 8000,
+        "packsOpenedQualifier": "more than"
+      },
+      "tiers": {
+        "V": {
+          "odds": 0.1155,
+          "expectedCards": 15
+        },
+        "VMAX/VSTAR": {
+          "odds": 0.0372,
+          "expectedCards": 7
+        },
+        "Full Art V": {
+          "odds": 0.021,
+          "expectedCards": 14
+        },
+        "Full Art Trainer": {
+          "odds": 0.0101,
+          "expectedCards": 8
+        },
+        "Alt Art V": {
+          "odds": 0.006,
+          "expectedCards": 4
+        },
+        "TG Non-V": {
+          "odds": 0.0825,
+          "expectedCards": 11
+        },
+        "TG V/Trainer": {
+          "odds": 0.0308,
+          "expectedCards": 17
+        },
+        "TG Gold": {
+          "odds": 0.009,
+          "expectedCards": 2
+        },
+        "Radiant Rare": {
+          "odds": 0.0455,
+          "expectedCards": 3
+        },
+        "Rainbow Rare": {
+          "odds": 0.0126,
+          "expectedCards": 14
+        },
+        "Gold Rare": {
+          "odds": 0.0094,
+          "expectedCards": 6
+        }
+      },
+      "tierAssignments": [
+        {
+          "fromTier": "Secret Rare",
+          "numberFrom": 210,
+          "numberTo": 215,
+          "tier": "Gold Rare"
+        }
+      ],
+      "tierAliases": {
+        "Secret Rare": "Rainbow Rare"
+      }
+    },
+    "17688": {
+      "name": "SWSH: Crown Zenith",
+      "layout": "swsh",
+      "source": {
+        "publisher": "TCGplayer Authentication Center",
+        "title": "Pokémon TCG: Crown Zenith Pull Rates",
+        "url": "https://www.tcgplayer.com/article/Pok%C3%A9mon-TCG-Crown-Zenith-Pull-Rates/56af3032-cb34-4da1-92fb-9cf206d10c0f/",
+        "date": "2023-01-20",
+        "packsOpened": 1900,
+        "packsOpenedQualifier": "more than"
+      },
+      "tiers": {
+        "GG Non-V": {
+          "odds": 0.224,
+          "expectedCards": 34
+        },
+        "GG V/Trainer": {
+          "odds": 0.12,
+          "expectedCards": 32,
+          "note": "Article says 31, but the 70-card Galarian Gallery is GG01-GG34 non-V, GG35-GG66 V/VSTAR/Trainer, GG67-GG70 gold: 34 + 32 + 4 = 70."
+        },
+        "GG Gold": {
+          "odds": 0.008,
+          "expectedCards": 4
+        },
+        "V": {
+          "odds": 0.1235,
+          "expectedCards": 17
+        },
+        "VMAX/VSTAR": {
+          "odds": 0.053,
+          "expectedCards": 13
+        },
+        "Texture Energy": {
+          "odds": 0.019,
+          "expectedCards": 8
+        },
+        "Full Art Trainer": {
+          "odds": 0.0095,
+          "expectedCards": 5
+        },
+        "Signature Trainer": {
+          "odds": 0.0765,
+          "expectedCards": 6
+        },
+        "Radiant Rare": {
+          "odds": 0.0455,
+          "expectedCards": 3
+        },
+        "Secret Rare": {
+          "odds": 0.0075,
+          "expectedCards": 1
+        }
+      },
+      "tierSlots": {
+        "Radiant Rare": "reverse"
+      }
+    },
+    "22873": {
+      "name": "SV01: Scarlet & Violet Base Set",
+      "layout": "sv",
+      "source": {
+        "publisher": "TCGplayer Authentication Center",
+        "title": "Pokémon TCG: Scarlet & Violet Pull Rates",
+        "url": "https://www.tcgplayer.com/article/Pok%C3%A9mon-TCG-Scarlet-Violet-Pull-Rates/a7702fce-dd64-4a58-beb1-0f871c853215/",
+        "date": "2023-03-31",
+        "packsOpened": 8000,
+        "packsOpenedQualifier": "more than"
+      },
+      "tiers": {
+        "Double Rare": {
+          "odds": 0.1376,
+          "ci95": 0.0073
+        },
+        "Ultra Rare": {
+          "odds": 0.0657,
+          "ci95": 0.0052
+        },
+        "Illustration Rare": {
+          "odds": 0.0767,
+          "ci95": 0.0056
+        },
+        "Special Illustration Rare": {
+          "odds": 0.0315,
+          "ci95": 0.0037
+        },
+        "Hyper Rare": {
+          "odds": 0.0185,
+          "ci95": 0.0028
+        }
+      }
+    },
+    "23120": {
+      "name": "SV02: Paldea Evolved",
+      "layout": "sv",
+      "source": {
+        "publisher": "TCGplayer Authentication Center",
+        "title": "Pokémon TCG: Paldea Evolved Pull Rates",
+        "url": "https://www.tcgplayer.com/article/Pok%C3%A9mon-TCG-Paldea-Evolved-Pull-Rates/1b7d3e70-9542-4a50-8692-1661e2316521/",
+        "date": "2023-06-09",
+        "packsOpened": 8000,
+        "packsOpenedQualifier": "more than"
+      },
+      "tiers": {
+        "Double Rare": {
+          "odds": 0.1372,
+          "ci95": 0.0073
+        },
+        "Ultra Rare": {
+          "odds": 0.0664,
+          "ci95": 0.0053
+        },
+        "Illustration Rare": {
+          "odds": 0.077,
+          "ci95": 0.0056
+        },
+        "Special Illustration Rare": {
+          "odds": 0.0317,
+          "ci95": 0.0037
+        },
+        "Hyper Rare": {
+          "odds": 0.0176,
+          "ci95": 0.0028
+        }
+      }
+    },
+    "23228": {
+      "name": "SV03: Obsidian Flames",
+      "layout": "sv",
+      "source": {
+        "publisher": "TCGplayer Authentication Center",
+        "title": "Pokémon TCG: Obsidian Flames Pull Rates",
+        "url": "https://www.tcgplayer.com/article/Pok%C3%A9mon-TCG-Obsidian-Flames-Pull-Rates/e2a66999-a7b5-4621-9765-c9a132e04bd2/",
+        "date": "2023-08-11",
+        "packsOpened": 8000,
+        "packsOpenedQualifier": "more than"
+      },
+      "tiers": {
+        "Double Rare": {
+          "odds": 0.1361,
+          "ci95": 0.0072
+        },
+        "Ultra Rare": {
+          "odds": 0.0663,
+          "ci95": 0.0052
+        },
+        "Illustration Rare": {
+          "odds": 0.076,
+          "ci95": 0.0056
+        },
+        "Special Illustration Rare": {
+          "odds": 0.0313,
+          "ci95": 0.0037
+        },
+        "Hyper Rare": {
+          "odds": 0.0192,
+          "ci95": 0.0029
+        }
+      }
+    },
+    "23286": {
+      "name": "SV04: Paradox Rift",
+      "layout": "sv",
+      "source": {
+        "publisher": "TCGplayer Authentication Center",
+        "title": "Pokémon TCG: Paradox Rift Pull Rates",
+        "url": "https://www.tcgplayer.com/article/Pok%C3%A9mon-TCG-Paradox-Rift-Pull-Rates/0b5fb648-38fc-4f61-a6af-57c2737b4a48/",
+        "date": "2023-11-04",
+        "packsOpened": 8000,
+        "packsOpenedQualifier": "more than"
+      },
+      "tiers": {
+        "Double Rare": {
+          "odds": 0.1557,
+          "ci95": 0.0076
+        },
+        "Ultra Rare": {
+          "odds": 0.0664,
+          "ci95": 0.0053
+        },
+        "Illustration Rare": {
+          "odds": 0.077,
+          "ci95": 0.0056
+        },
+        "Special Illustration Rare": {
+          "odds": 0.0211,
+          "ci95": 0.003
+        },
+        "Hyper Rare": {
+          "odds": 0.0122,
+          "ci95": 0.0023
+        }
+      }
+    },
+    "23353": {
+      "name": "SV: Paldean Fates",
+      "layout": "sv",
+      "source": {
+        "publisher": "TCGplayer Authentication Center",
+        "title": "Pokémon TCG: Paldean Fates Pull Rates",
+        "url": "https://www.tcgplayer.com/article/Pok%C3%A9mon-TCG-Paldean-Fates-Pull-Rates/23de3e93-0d0f-4ae0-abc4-13664f3001a3/",
+        "date": "2024-01-26",
+        "packsOpened": 1500,
+        "packsOpenedQualifier": "more than"
+      },
+      "tiers": {
+        "Double Rare": {
+          "odds": 0.1589,
+          "ci95": 0.0169,
+          "expectedCards": 10
+        },
+        "Ultra Rare": {
+          "odds": 0.0661,
+          "ci95": 0.0115,
+          "expectedCards": 5
+        },
+        "Shiny Rare": {
+          "odds": 0.2544,
+          "ci95": 0.0201,
+          "expectedCards": 120
+        },
+        "Shiny Ultra Rare": {
+          "odds": 0.0772,
+          "ci95": 0.0123,
+          "expectedCards": 12
+        },
+        "Illustration Rare": {
+          "odds": 0.0722,
+          "ci95": 0.012
+        },
+        "Special Illustration Rare": {
+          "odds": 0.0172,
+          "ci95": 0.006
+        },
+        "Hyper Rare": {
+          "odds": 0.0161,
+          "ci95": 0.0058
+        }
+      }
+    },
+    "23381": {
+      "name": "SV05: Temporal Forces",
+      "layout": "sv",
+      "source": {
+        "publisher": "TCGplayer Authentication Center",
+        "title": "Pokémon TCG: Temporal Forces Pull Rates",
+        "url": "https://www.tcgplayer.com/article/Pok%C3%A9mon-TCG-Temporal-Forces-Pull-Rates/28c0ad22-00a4-428f-b22d-e7fee9ec50bc/",
+        "date": "2024-03-22",
+        "packsOpened": 8000,
+        "packsOpenedQualifier": "more than"
+      },
+      "tiers": {
+        "Double Rare": {
+          "odds": 0.1683,
+          "ci95": 0.0079
+        },
+        "Ultra Rare": {
+          "odds": 0.0667,
+          "ci95": 0.0053
+        },
+        "ACE SPEC Rare": {
+          "odds": 0.05,
+          "ci95": 0.0046
+        },
+        "Illustration Rare": {
+          "odds": 0.0772,
+          "ci95": 0.0056
+        },
+        "Special Illustration Rare": {
+          "odds": 0.0117,
+          "ci95": 0.0023
+        },
+        "Hyper Rare": {
+          "odds": 0.0072,
+          "ci95": 0.0018
+        }
+      }
+    },
+    "23473": {
+      "name": "SV06: Twilight Masquerade",
+      "layout": "sv",
+      "source": {
+        "publisher": "TCGplayer Authentication Center",
+        "title": "Pokémon TCG: Twilight Masquerade Pull Rates",
+        "url": "https://www.tcgplayer.com/article/Pok%C3%A9mon-TCG-Twilight-Masquerade-Pull-Rates/f3eea967-e5fb-4108-8655-bb1c89587628/",
+        "date": "2024-05-24",
+        "packsOpened": 8000,
+        "packsOpenedQualifier": "more than"
+      },
+      "tiers": {
+        "Double Rare": {
+          "odds": 0.1693,
+          "ci95": 0.0079
+        },
+        "Ultra Rare": {
+          "odds": 0.0661,
+          "ci95": 0.0052
+        },
+        "ACE SPEC Rare": {
+          "odds": 0.0506,
+          "ci95": 0.0046
+        },
+        "Illustration Rare": {
+          "odds": 0.0773,
+          "ci95": 0.0056
+        },
+        "Special Illustration Rare": {
+          "odds": 0.0117,
+          "ci95": 0.0023
+        },
+        "Hyper Rare": {
+          "odds": 0.0068,
+          "ci95": 0.0017
+        }
+      }
+    },
+    "23537": {
+      "name": "SV07: Stellar Crown",
+      "layout": "sv",
+      "source": {
+        "publisher": "TCGplayer Authentication Center",
+        "title": "Pokémon TCG: Stellar Crown Pull Rates",
+        "url": "https://www.tcgplayer.com/article/Pok%C3%A9mon-TCG-Stellar-Crown-Pull-Rates/2c0743dd-dbd0-4504-9ff8-be5a72dd04d1/",
+        "date": "2024-09-13",
+        "packsOpened": 8000,
+        "packsOpenedQualifier": "more than"
+      },
+      "tiers": {
+        "Double Rare": {
+          "odds": 0.169,
+          "ci95": 0.0079
+        },
+        "Ultra Rare": {
+          "odds": 0.0675,
+          "ci95": 0.0053
+        },
+        "ACE SPEC Rare": {
+          "odds": 0.0494,
+          "ci95": 0.0046
+        },
+        "Illustration Rare": {
+          "odds": 0.0779,
+          "ci95": 0.0057
+        },
+        "Special Illustration Rare": {
+          "odds": 0.0111,
+          "ci95": 0.0022
+        },
+        "Hyper Rare": {
+          "odds": 0.0073,
+          "ci95": 0.0018
+        }
+      }
+    },
+    "23651": {
+      "name": "SV08: Surging Sparks",
+      "layout": "sv",
+      "source": {
+        "publisher": "TCGplayer Authentication Center",
+        "title": "Pokémon TCG: Surging Sparks Pull Rates",
+        "url": "https://www.tcgplayer.com/article/Pok%C3%A9mon-TCG-Surging-Sparks-Pull-Rates/6ccfb6ab-f26a-4ce8-bab5-5f91c85ec70e/",
+        "date": "2024-11-08",
+        "packsOpened": 8000,
+        "packsOpenedQualifier": "more than"
+      },
+      "tiers": {
+        "Double Rare": {
+          "odds": 0.1694,
+          "ci95": 0.0079
+        },
+        "Ultra Rare": {
+          "odds": 0.0674,
+          "ci95": 0.0053
+        },
+        "ACE SPEC Rare": {
+          "odds": 0.0503,
+          "ci95": 0.0046,
+          "expectedCards": 8
+        },
+        "Illustration Rare": {
+          "odds": 0.0767,
+          "ci95": 0.0056
+        },
+        "Special Illustration Rare": {
+          "odds": 0.0115,
+          "ci95": 0.0022,
+          "expectedCards": 11
+        },
+        "Hyper Rare": {
+          "odds": 0.0053,
+          "ci95": 0.0015,
+          "expectedCards": 6
+        }
+      }
+    },
+    "24073": {
+      "name": "SV09: Journey Together",
+      "layout": "sv",
+      "source": {
+        "publisher": "TCGplayer Authentication Center",
+        "title": "Pokémon TCG: Journey Together Pull Rates",
+        "url": "https://www.tcgplayer.com/article/Pok%C3%A9mon-TCG-Journey-Together-Pull-Rates/1b9f379f-97cb-45cc-b6f6-a1a070a422cd/",
+        "date": "2025-03-28",
+        "packsOpened": 8000,
+        "packsOpenedQualifier": "more than"
+      },
+      "tiers": {
+        "Double Rare": {
+          "odds": 0.2029,
+          "ci95": 0.0085
+        },
+        "Ultra Rare": {
+          "odds": 0.0654,
+          "ci95": 0.0052
+        },
+        "Illustration Rare": {
+          "odds": 0.085,
+          "ci95": 0.0059
+        },
+        "Special Illustration Rare": {
+          "odds": 0.0116,
+          "ci95": 0.0023
+        },
+        "Hyper Rare": {
+          "odds": 0.0073,
+          "ci95": 0.0018
+        }
+      }
+    },
+    "24269": {
+      "name": "SV10: Destined Rivals",
+      "layout": "sv",
+      "source": {
+        "publisher": "TCGplayer Authentication Center",
+        "title": "Pokémon TCG: Destined Rivals Pull Rates",
+        "url": "https://www.tcgplayer.com/article/Pok%C3%A9mon-TCG-Destined-Rivals-Pull-Rates/43ba832e-44c9-45a4-ae2e-594df2defdda/",
+        "date": "2025-05-30",
+        "packsOpened": 8000,
+        "packsOpenedQualifier": "more than"
+      },
+      "tiers": {
+        "Double Rare": {
+          "odds": 0.1983,
+          "ci95": 0.0084
+        },
+        "Ultra Rare": {
+          "odds": 0.0639,
+          "ci95": 0.0052
+        },
+        "Illustration Rare": {
+          "odds": 0.0829,
+          "ci95": 0.0058
+        },
+        "Special Illustration Rare": {
+          "odds": 0.0106,
+          "ci95": 0.0022
+        },
+        "Hyper Rare": {
+          "odds": 0.0067,
+          "ci95": 0.0017
+        }
+      }
+    },
+    "24380": {
+      "name": "ME01: Mega Evolution",
+      "layout": "sv",
+      "source": {
+        "publisher": "TCGplayer Authentication Center",
+        "title": "Pokémon TCG: Mega Evolution Pull Rates",
+        "url": "https://www.tcgplayer.com/article/Pok%C3%A9mon-TCG-Mega-Evolution-Pull-Rates/40cbeedc-21ce-473b-aef1-74e3969d9f91/",
+        "date": "2025-09-30",
+        "packsOpened": 5000,
+        "packsOpenedQualifier": "more than"
+      },
+      "tiers": {
+        "Double Rare": {
+          "odds": 0.2091,
+          "ci95": 0.0112
+        },
+        "Ultra Rare": {
+          "odds": 0.0823,
+          "ci95": 0.0076
+        },
+        "Illustration Rare": {
+          "odds": 0.1089,
+          "ci95": 0.0086
+        },
+        "Special Illustration Rare": {
+          "odds": 0.0099,
+          "ci95": 0.0027
+        },
+        "Mega Hyper Rare": {
+          "odds": 0.0008,
+          "ci95": 0.0008,
+          "expectedCards": 2
+        }
+      }
+    },
+    "24448": {
+      "name": "ME02: Phantasmal Flames",
+      "layout": "sv",
+      "source": {
+        "publisher": "TCGplayer Authentication Center",
+        "title": "Pokémon TCG: Phantasmal Flames Pull Rates",
+        "url": "https://www.tcgplayer.com/article/Pok%C3%A9mon-TCG-Phantasmal-Flames-Pull-Rates/9abae60d-b7fb-448f-874e-176f78d6a6ca/",
+        "date": "2025-11-15",
+        "packsOpened": 5000,
+        "packsOpenedQualifier": "more than"
+      },
+      "tiers": {
+        "Double Rare": {
+          "odds": 0.2077,
+          "ci95": 0.0112
+        },
+        "Ultra Rare": {
+          "odds": 0.0806,
+          "ci95": 0.0075
+        },
+        "Illustration Rare": {
+          "odds": 0.1097,
+          "ci95": 0.0086
+        },
+        "Special Illustration Rare": {
+          "odds": 0.0125,
+          "ci95": 0.0031
+        },
+        "Mega Hyper Rare": {
+          "odds": 0.0008,
+          "ci95": 0.0008,
+          "expectedCards": 1
+        }
+      }
+    },
+    "24541": {
+      "name": "ME: Ascended Heroes",
+      "layout": "sv",
+      "source": {
+        "publisher": "TCGplayer Authentication Center",
+        "title": "Pokémon TCG: Ascended Heroes Pull Rates",
+        "url": "https://www.tcgplayer.com/article/Pok%C3%A9mon-TCG-Ascended-Heroes-Pull-Rates/60143d94-88a7-42ce-8e73-babd7b3fabd6/",
+        "date": "2026-02-24",
+        "packsOpened": 2000,
+        "packsOpenedQualifier": "more than",
+        "note": "Ultra Rare uses the summary table's 4.81%; the article's detail line says 20.77% (typo). Ball/Energy-pattern reverse holos were not studied and are treated as ordinary reverse holos (they are priced like them)."
+      },
+      "tiers": {
+        "Double Rare": {
+          "odds": 0.2037,
+          "ci95": 0.017,
+          "expectedCards": 39
+        },
+        "Ultra Rare": {
+          "odds": 0.0481,
+          "ci95": 0.009,
+          "expectedCards": 14
+        },
+        "Mega Attack Rare": {
+          "odds": 0.0347,
+          "ci95": 0.0077,
+          "expectedCards": 7
+        },
+        "Illustration Rare": {
+          "odds": 0.1125,
+          "ci95": 0.0133,
+          "expectedCards": 33
+        },
+        "Special Illustration Rare": {
+          "odds": 0.0144,
+          "ci95": 0.005,
+          "expectedCards": 22
+        },
+        "Mega Hyper Rare": {
+          "odds": 0.0019,
+          "ci95": 0.0018,
+          "expectedCards": 2
+        }
+      }
+    },
+    "24587": {
+      "name": "ME03: Perfect Order",
+      "layout": "sv",
+      "source": {
+        "publisher": "TCGplayer Authentication Center",
+        "title": "Pokémon TCG: Perfect Order Pull Rates",
+        "url": "https://www.tcgplayer.com/article/Pok%C3%A9mon-TCG-Perfect-Order-Pull-Rates/73148119-ebcb-40b7-84b6-52b3a6d0c631/",
+        "date": "2026-04-03",
+        "packsOpened": 3500,
+        "packsOpenedQualifier": "more than"
+      },
+      "tiers": {
+        "Double Rare": {
+          "odds": 0.2097,
+          "ci95": 0.0134
+        },
+        "Ultra Rare": {
+          "odds": 0.0854,
+          "ci95": 0.0092
+        },
+        "Illustration Rare": {
+          "odds": 0.112,
+          "ci95": 0.0103
+        },
+        "Special Illustration Rare": {
+          "odds": 0.0123,
+          "ci95": 0.0036
+        },
+        "Mega Hyper Rare": {
+          "odds": 0.0006,
+          "ci95": 0.0008,
+          "expectedCards": 1
+        }
+      }
+    },
+    "24655": {
+      "name": "ME04: Chaos Rising",
+      "layout": "sv",
+      "source": {
+        "publisher": "TCGplayer Authentication Center",
+        "title": "Pokémon TCG: Chaos Rising Pull Rates",
+        "url": "https://www.tcgplayer.com/article/Pok%C3%A9mon-TCG-Chaos-Rising-Pull-Rates/304e8bfc-175a-4d31-93fe-5bb1be11e5d2/",
+        "date": "2026-06-04",
+        "packsOpened": 8500,
+        "packsOpenedQualifier": "more than"
+      },
+      "tiers": {
+        "Double Rare": {
+          "odds": 0.203,
+          "ci95": 0.0085
+        },
+        "Ultra Rare": {
+          "odds": 0.0829,
+          "ci95": 0.0058
+        },
+        "Illustration Rare": {
+          "odds": 0.1066,
+          "ci95": 0.0065
+        },
+        "Special Illustration Rare": {
+          "odds": 0.0121,
+          "ci95": 0.0023
+        },
+        "Mega Hyper Rare": {
+          "odds": 0.001,
+          "ci95": 0.0007,
+          "expectedCards": 1
+        }
+      }
+    },
+    "24688": {
+      "name": "ME05: Pitch Black",
+      "layout": "sv",
+      "source": {
+        "publisher": "TCGplayer Authentication Center",
+        "title": "Pokémon TCG: Pitch Black Pull Rates",
+        "url": "https://www.tcgplayer.com/article/Pok%C3%A9mon-TCG-Pitch-Black-Pull-Rates/069a5fda-2d1f-44a1-97de-b6dcdc5abfb8/",
+        "date": "2026-07-21",
+        "packsOpened": 4000,
+        "packsOpenedQualifier": "more than"
+      },
+      "tiers": {
+        "Double Rare": {
+          "odds": 0.2102,
+          "ci95": 0.0121
+        },
+        "Ultra Rare": {
+          "odds": 0.083,
+          "ci95": 0.0082
+        },
+        "Illustration Rare": {
+          "odds": 0.1101,
+          "ci95": 0.0093
+        },
+        "Special Illustration Rare": {
+          "odds": 0.0125,
+          "ci95": 0.0033
+        },
+        "Mega Hyper Rare": {
+          "odds": 0.0009,
+          "ci95": 0.0009,
+          "expectedCards": 1
+        }
+      }
+    }
+  },
+  "excluded": {
+    "3040": {
+      "name": "SWSH10: Astral Radiance",
+      "reason": "The study did not report Radiant Rare; its rate would have to be estimated."
+    },
+    "23237": {
+      "name": "SV: Scarlet & Violet 151",
+      "reason": "The study measures Foil Energy (1 in 4 packs), which cannot be priced, so EV would be incomplete."
+    },
+    "23529": {
+      "name": "SV: Shrouded Fable",
+      "reason": "TCGplayer has not published a pull-rate study for this set."
+    },
+    "23821": {
+      "name": "SV: Prismatic Evolutions",
+      "reason": "TCGplayer flags its SIR rate as unreliable (Demigod/God Packs), and the article gives two different Double Rare rates."
+    },
+    "24325": {
+      "name": "SV: Black Bolt",
+      "reason": "Black White Rare rate unmeasured; TCGplayer reports data problems and a ~350-pack sample."
+    },
+    "24326": {
+      "name": "SV: White Flare",
+      "reason": "Black White Rare rate unmeasured; TCGplayer reports data problems and a ~350-pack sample."
+    },
+    "24722": {
+      "name": "ME: 30th Celebration",
+      "reason": "RGB Rare: TCGplayer found none in 3,000+ packs, so its rate is unmeasured and EV would omit it."
+    },
+    "24831": {
+      "name": "ME06: Delta Reign",
+      "reason": "Not released yet; no pull-rate study exists."
+    }
+  }
+}

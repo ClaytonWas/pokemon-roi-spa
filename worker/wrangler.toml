@@ -1,0 +1,7 @@
+name = "ppt-proxy"
+main = "ppt-proxy.js"
+compatibility_date = "2026-10-01"
+
+[vars]
+# Your GitHub Pages origin, e.g. "https://yourname.github.io". "*" allows any site.
+ALLOWED_ORIGINS = "*"

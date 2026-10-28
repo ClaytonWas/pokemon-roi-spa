@@ -1,0 +1,7 @@
+{
+  "_doc": "MSRP per product type, verified values only. Lookup order: sets[groupId][type] -> eras[era][type] -> defaults[type]; each currency resolves independently; null = unknown, and ROI@MSRP is not shown. Add a value only with a primary source (an official Pokémon / Pokémon Center list price you can link to), e.g. { \"USD\": { \"value\": 49.99, \"effectiveDate\": \"YYYY-MM-DD\", \"confidence\": \"list\", \"source\": \"https://...\" } }. The UI hides the MSRP columns while no product has an MSRP.",
+  "_removed": "2026-10-28: all previous values were removed. The Pokémon Company publishes no US MSRPs; pokemoncenter.com could not be read to verify list prices; and the third-party trackers disagreed (ETB $49.99 vs $59.99, booster bundle $25.00 vs $26.94). Canadian values were relayed second-hand, one was estimated and one derived.",
+  "defaults": {},
+  "eras": {},
+  "sets": {}
+}

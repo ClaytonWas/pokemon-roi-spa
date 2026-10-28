@@ -1,0 +1,74 @@
+{
+  "_doc": "Packs per sealed product and the slot structure of one booster pack. Lookup order for packs: setOverrides[groupId][type] -> eraOverrides[era][type] -> defaults[type]. Every build cross-checks these counts against the pack count parsed from each product's tcgcsv CardText and reports mismatches in build-report.packCountMismatches.",
+
+  "rankedTypes": ["pack", "box", "etb", "pc-etb", "bundle"],
+
+  "packs": {
+    "defaults": { "pack": 1, "box": 36, "etb": 9, "pc-etb": 11, "bundle": 6 },
+    "_defaultsSource": "Verified 2026-10-27 against tcgcsv CardText for every SV/ME set with these products (e.g. '9 Pokémon TCG: Mega Evolution booster packs', '11 ... booster packs' for Pokémon Center ETBs, 'six booster packs' for bundles, '36 booster packs' for boxes).",
+    "eraOverrides": {
+      "swsh": { "etb": 8, "pc-etb": 10 }
+    },
+    "_eraOverridesSource": "SWSH ETB CardText: 'eight/8 ... booster packs'; SWSH Pokémon Center ETB CardText: '10 booster packs' (Evolving Skies, Brilliant Stars, Silver Tempest). The spec's 11 applies to SV/ME only.",
+    "setOverrides": {
+      "2685": { "etb": 10, "_source": "Champion's Path ETB CardText: '10 ... booster packs'" },
+      "2754": { "etb": 10, "_source": "Shining Fates ETB CardText: '10 Shining Fates booster packs'" },
+      "2807": { "pc-etb": 8, "_source": "Chilling Reign Pokémon Center ETB was designed with 10 packs but shipped with 8 after a factory error (buyers were compensated); TCGplayer's CardText lists 8. See https://www.pokemonwizard.com/products/247282/chilling-reign-pokemon-center-elite-trainer-box-shadow-rider-calyrex-exclusive" },
+      "2867": { "etb": 10, "pc-etb": 13, "_source": "Celebrations ETB: '10 Celebrations four-card booster packs'; PC ETB: '13 ...'" },
+      "3064": { "etb": 10, "pc-etb": 12, "_source": "Pokémon GO ETB: '10 ...'; Pokémon Center ETB Plus: '12 booster packs'" },
+      "17688": { "etb": 10, "pc-etb": 12, "_source": "Crown Zenith ETB: '10 ...'; Pokémon Center ETB Plus: '12 booster packs'" }
+    }
+  },
+
+  "promoValue": {
+    "_doc": "Optional USD value added to a product's EV for its included promo card(s). ETB promos live in a separate promo group on TCGplayer and are not auto-linked, so the default is 0. The set page lets users enter a value.",
+    "defaults": { "pack": 0, "box": 0, "etb": 0, "pc-etb": 0, "bundle": 0 },
+    "setOverrides": {}
+  },
+
+  "pools": {
+    "_doc": "Filler pools: what a slot yields when no hit tier is drawn. `tiers` are the card tiers in the pool; `variants` is the price-variant preference (first variant with a price wins). The reverse pool takes only the Reverse Holofoil printing of C/U/R cards, plus cards whose tier is 'Reverse Holo' (pattern-foil reverse products).",
+    "common": { "tiers": ["Common"], "variants": ["normal", "holofoil"] },
+    "uncommon": { "tiers": ["Uncommon"], "variants": ["normal", "holofoil"] },
+    "rare": { "tiers": ["Rare", "Holo Rare"], "variants": ["holofoil", "normal"] },
+    "reverse": { "tiers": ["Common", "Uncommon", "Rare", "Holo Rare", "Reverse Holo"], "variants": ["reverseHolofoil"], "anyVariantTiers": ["Reverse Holo"] }
+  },
+
+  "hitVariants": ["holofoil", "normal", "reverseHolofoil"],
+
+  "layouts": {
+    "_doc": "Slots of one booster pack. A slot with `hits` draws one hit tier with that tier's per-pack odds (they share the slot, so their odds must sum to <= 1); otherwise it yields a uniform draw from `pool`. A slot with count > 1 must not list hits (odds are per pack). Which slot a tier occupies only affects co-occurrence in the Monte Carlo, never the EV. Slot placement follows TCGplayer's articles ('in the Rare slot', 'in the first/second Reverse Holo slot'). A set can move a tier with pullrates.sets[id].tierSlots.",
+    "sv": {
+      "cardsPerPack": 10,
+      "_source": "SV/ME packs: 4 Common, 3 Uncommon, 2 Reverse Holo, 1 Rare (+ basic Energy and code card, not valued).",
+      "slots": [
+        { "id": "common", "count": 4, "pool": "common" },
+        { "id": "uncommon", "count": 3, "pool": "uncommon" },
+        { "id": "reverse1", "count": 1, "pool": "reverse", "hits": ["ACE SPEC Rare", "Poké Ball Pattern", "Shiny Rare", "Shiny Ultra Rare"] },
+        { "id": "reverse2", "count": 1, "pool": "reverse", "hits": ["Illustration Rare", "Special Illustration Rare", "Master Ball Pattern"] },
+        { "id": "rare", "count": 1, "pool": "rare", "hits": ["Double Rare", "Ultra Rare", "Hyper Rare", "Mega Hyper Rare", "Mega Attack Rare", "Black White Rare"] }
+      ]
+    },
+    "swsh": {
+      "cardsPerPack": 10,
+      "_source": "SWSH packs: 5 Common, 3 Uncommon, 1 Reverse Holo, 1 Rare (+ basic Energy and code card). Radiant Rares replace a Common (Crown Zenith: the Reverse Holo, set via tierSlots); Trainer/Galarian Gallery replaces the Reverse Holo.",
+      "slots": [
+        { "id": "common", "count": 4, "pool": "common" },
+        { "id": "common5", "count": 1, "pool": "common", "hits": ["Radiant Rare"] },
+        { "id": "uncommon", "count": 3, "pool": "uncommon" },
+        { "id": "reverse", "count": 1, "pool": "reverse", "hits": ["TG Non-V", "TG V/Trainer", "TG Gold", "GG Non-V", "GG V/Trainer", "GG Gold", "Shiny Vault", "Classic Collection", "Amazing Rare"] },
+        { "id": "rare", "count": 1, "pool": "rare", "hits": ["V", "VMAX/VSTAR", "Full Art V", "Full Art Trainer", "Full Art", "Alt Art V", "Alt Art VMAX", "Rainbow Rare", "Gold Rare", "Secret Rare", "Texture Energy", "Signature Trainer"] }
+      ]
+    },
+    "30c": {
+      "cardsPerPack": 5,
+      "_source": "TCGplayer 30th Celebration article: 5 foil cards; Illustration Rare / Classic Collection appear 'in the third slot', Double Rare / SIR / Futuristic Rare 'in the fourth slot', a Pikachu Rare is 'guaranteed in the last slot'. Filler composition of slots 1-4 is an assumption (all bulk-priced).",
+      "slots": [
+        { "id": "slot1-2", "count": 2, "pool": "common" },
+        { "id": "slot3", "count": 1, "pool": "common", "hits": ["Illustration Rare", "Classic Collection"] },
+        { "id": "slot4", "count": 1, "pool": "rare", "hits": ["Double Rare", "Special Illustration Rare", "Futuristic Rare", "RGB Rare"] },
+        { "id": "slot5", "count": 1, "pool": null, "hits": ["Pikachu Rare"] }
+      ]
+    }
+  }
+}

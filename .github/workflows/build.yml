@@ -1,0 +1,77 @@
+name: Build data and deploy
+
+on:
+  schedule:
+    - cron: '30 21 * * *' # tcgcsv updates ~20:00 UTC
+  workflow_dispatch:
+    inputs:
+      force:
+        description: Rebuild even if tcgcsv's last-updated marker is unchanged
+        type: boolean
+        default: false
+  push:
+    branches: [main]
+    paths-ignore: ['public/data/**']
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: build-and-deploy
+  cancel-in-progress: false
+
+jobs:
+  data:
+    if: github.event_name != 'push'
+    runs-on: ubuntu-latest
+    outputs:
+      changed: ${{ steps.build.outputs.changed }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm test
+      - id: build
+        run: node scripts/build-data.mjs ${{ inputs.force && '--force' || '' }}
+      - name: Keep the build report when validation fails
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-report
+          path: public/data/build-report.json
+      - name: Commit data
+        if: steps.build.outputs.changed == 'true'
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add public/data
+          git diff --cached --quiet || git commit -m "data: tcgcsv $(date -u +%F)"
+          git push
+
+  deploy:
+    needs: data
+    # Code pushes deploy directly (data job skipped); scheduled runs deploy only when new data was published.
+    if: always() && (needs.data.result == 'skipped' || (needs.data.result == 'success' && needs.data.outputs.changed == 'true'))
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main # includes the data commit pushed by the data job
+      - name: Assemble site (public/ at the root, shared src/ beside it)
+        run: |
+          mkdir -p _site
+          cp -r public/. _site/
+          cp -r src _site/src
+          touch _site/.nojekyll
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+      - id: deployment
+        uses: actions/deploy-pages@v4

@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Set Detail · Pokémon Sealed ROI</title>
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <nav class="site-nav"><a href="index.html">← Rankings</a><a href="charts.html">Charts</a></nav>
+    <header id="head"><h1>Loading…</h1></header>
+
+    <details id="settings" open>
+      <summary>Settings (assumptions; saved in this browser)</summary>
+      <form id="form" onsubmit="return false">
+        <fieldset>
+          <legend>Raw valuation</legend>
+          <label>Currency <select name="currency"><option>USD</option><option>CAD</option></select></label>
+          <label>EV basis <select name="basis"><option value="gross">Gross (market)</option><option value="net">Net of fees</option></select></label>
+          <label>Bulk threshold $ <input name="bulkThreshold" type="number" step="0.05" min="0" /></label>
+          <label>Bulk rate $/card <input name="bulkRatePerCard" type="number" step="0.005" min="0" /></label>
+          <label>Sell fee % <input name="sellFeePct" type="number" step="0.25" min="0" max="100" data-scale="100" /></label>
+          <label>Shipping $/card <input name="perCardShipping" type="number" step="0.05" min="0" /></label>
+          <label><input name="netFloorAtBulkRate" type="checkbox" /> Net never below bulk rate</label>
+          <label>Simulations <input name="sims" type="number" step="1000" min="1000" max="200000" /></label>
+        </fieldset>
+        <fieldset id="promos"><legend>Promo value added to EV ($)</legend></fieldset>
+        <fieldset>
+          <legend>Graded view (optional, off by default)</legend>
+          <label><input name="useGraded" type="checkbox" /> Use graded EV for top hits</label>
+          <label>Gem rate (assumption) <input name="gemRate" type="range" min="0" max="1" step="0.01" /> <output id="gemRateOut"></output></label>
+          <label>Grading cost $ (assumption) <input name="gradingCost" type="range" min="0" max="200" step="1" /> <output id="gradingCostOut"></output></label>
+          <label>Top N cards <input name="topN" type="number" min="1" max="50" /></label>
+          <label>Provider <select name="provider"></select></label>
+          <label>API key <input name="apiKey" type="password" autocomplete="off" placeholder="your key, stored only in this browser" /></label>
+          <label>API base URL <input name="baseUrl" type="url" placeholder="https://your-worker.workers.dev" /></label>
+          <button type="button" id="fetchGraded">Fetch graded prices</button>
+          <button type="button" id="clearGraded">Clear graded cache</button>
+          <p id="gradedStatus" class="muted"></p>
+        </fieldset>
+      </form>
+    </details>
+
+    <h2>Sealed products</h2>
+    <div id="products" class="scroll"></div>
+    <p class="muted" id="productsNote"></p>
+
+    <h2>Graded prices (top hits)</h2>
+    <div id="graded" class="scroll"><p class="muted">Not loaded. Add an API key above and fetch.</p></div>
+
+    <h2>Per-card EV contribution (one pack)</h2>
+    <label>Filter <input id="cardFilter" type="search" placeholder="name, tier or rarity" /></label>
+    <div id="cards" class="scroll"></div>
+
+    <h2>All sealed listings</h2>
+    <div id="listings" class="scroll"></div>
+
+    <script type="module" src="app/set.js"></script>
+  </body>
+</html>

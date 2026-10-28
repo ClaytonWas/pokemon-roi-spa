@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Charts of expected value vs. price for English Pokémon TCG sealed products." />
+    <title>Charts · Pokémon Sealed ROI</title>
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="charts.css" />
+  </head>
+  <body class="viz-root">
+    <nav class="site-nav"><a href="index.html">Rankings</a><a href="charts.html" aria-current="page">Charts</a></nav>
+    <header>
+      <h1>Charts</h1>
+      <p class="muted">How the value inside sealed products compares to what they cost. Every chart has a table view.</p>
+    </header>
+
+    <section class="filters" aria-label="Filters for every chart below">
+      <label>Product <select id="type"></select></label>
+      <label>Era <select id="era"><option value="">All</option></select></label>
+      <label>Highlight set <select id="focus"></select></label>
+      <label>Currency <select id="currency"><option>USD</option><option>CAD</option></select></label>
+    </section>
+
+    <div id="fig-ev-time"></div>
+    <div id="fig-dumbbell"></div>
+    <div id="fig-outcomes"></div>
+    <div id="fig-composition"></div>
+
+    <script type="module" src="app/charts.js"></script>
+  </body>
+</html>
