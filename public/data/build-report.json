@@ -1,7 +1,7 @@
 {
   "contractVersion": 1,
-  "generatedAt": "2026-11-01T21:32:30.343Z",
-  "tcgcsvLastUpdated": "2026-11-01T20:05:16+0000",
+  "generatedAt": "2026-11-02T21:32:24.338Z",
+  "tcgcsvLastUpdated": "2026-11-02T20:06:18+0000",
   "status": "ok",
   "summary": {
     "setsProcessed": 41,
@@ -9,16 +9,16 @@
     "setsWithoutPullData": 20,
     "rows": 171,
     "cards": 8850,
-    "pricedCardShare": 0.9904,
+    "pricedCardShare": 0.9966,
     "cardsUsingPriceFallback": 0,
     "excludedNonPackCards": 1,
     "fx": {
-      "usdCad": 1.396,
-      "date": "2026-10-30",
+      "usdCad": 1.3978,
+      "date": "2026-11-02",
       "source": "Bank of Canada Valet FXUSDCAD"
     },
     "requests": 100,
-    "durationMs": 19183
+    "durationMs": 18040
   },
   "setsMissingPullData": [
     {
@@ -107,6 +107,15 @@
   "unknownOddsTiers": [],
   "tierCountMismatches": [],
   "packCountMismatches": [
+    {
+      "groupId": 24722,
+      "setName": "ME: 30th Celebration",
+      "productId": 729930,
+      "name": "Costco Pokemon 30th Celebration 2-Pack Trainer Box and Booster Bundle",
+      "configured": 6,
+      "stated": 9,
+      "canonical": false
+    },
     {
       "groupId": 2701,
       "setName": "SWSH04: Vivid Voltage",
