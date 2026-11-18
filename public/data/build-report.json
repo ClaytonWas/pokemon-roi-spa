@@ -1,7 +1,7 @@
 {
   "contractVersion": 1,
-  "generatedAt": "2026-11-17T21:32:05.348Z",
-  "tcgcsvLastUpdated": "2026-11-17T20:05:43+0000",
+  "generatedAt": "2026-11-18T21:32:20.144Z",
+  "tcgcsvLastUpdated": "2026-11-18T20:05:56+0000",
   "status": "ok",
   "summary": {
     "setsProcessed": 41,
@@ -13,12 +13,12 @@
     "cardsUsingPriceFallback": 0,
     "excludedNonPackCards": 1,
     "fx": {
-      "usdCad": 1.4291,
-      "date": "2026-11-17",
+      "usdCad": 1.4326,
+      "date": "2026-11-18",
       "source": "Bank of Canada Valet FXUSDCAD"
     },
     "requests": 100,
-    "durationMs": 19124
+    "durationMs": 18913
   },
   "setsMissingPullData": [
     {
