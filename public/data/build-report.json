@@ -1,26 +1,30 @@
 {
   "contractVersion": 1,
-  "generatedAt": "2026-11-18T21:32:20.144Z",
-  "tcgcsvLastUpdated": "2026-11-18T20:05:56+0000",
+  "generatedAt": "2026-11-19T21:32:27.875Z",
+  "tcgcsvLastUpdated": "2026-11-19T20:04:34+0000",
   "status": "ok",
   "summary": {
-    "setsProcessed": 41,
+    "setsProcessed": 42,
     "setsWithMeasuredPullData": 21,
-    "setsWithoutPullData": 20,
-    "rows": 171,
+    "setsWithoutPullData": 21,
+    "rows": 176,
     "cards": 8850,
     "pricedCardShare": 1,
     "cardsUsingPriceFallback": 0,
     "excludedNonPackCards": 1,
     "fx": {
-      "usdCad": 1.4326,
-      "date": "2026-11-18",
+      "usdCad": 1.4317,
+      "date": "2026-11-19",
       "source": "Bank of Canada Valet FXUSDCAD"
     },
-    "requests": 100,
-    "durationMs": 18913
+    "requests": 102,
+    "durationMs": 17544
   },
   "setsMissingPullData": [
+    {
+      "groupId": 24955,
+      "setName": "ME07: Flowing Fists"
+    },
     {
       "groupId": 24831,
       "setName": "ME06: Delta Reign"
